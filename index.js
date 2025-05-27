@@ -49,7 +49,7 @@ app.get("/home", (req, res) => {
 // Serve static frontend in production
 const isProduction = process.env.NODE_ENV === "production";
 if (isProduction) {
-  const clientBuildPath = path.join(__dirname, 'client', 'build');
+const clientBuildPath = path.join(__dirname, 'client', 'dist');
   app.use(express.static(clientBuildPath));
 
   app.get("*", (req, res) => {
